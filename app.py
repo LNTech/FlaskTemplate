@@ -5,6 +5,8 @@ app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.jinja_env.trim_blocks = True
+app.jinja_env.lstrip_blocks = True
 
 @app.route("/", methods=["GET"])
 def index():
